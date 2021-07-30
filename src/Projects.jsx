@@ -6,6 +6,7 @@ const [project, setProject] = useState([
     invision: "Link",
     website: "Link",
     artifacts: "Link",
+    heroImg: {},
     id: nanoid(),
   },
   {
@@ -15,6 +16,7 @@ const [project, setProject] = useState([
     invision: "Link",
     website: "Link",
     artifacts: "Link",
+    heroImg: {},
     id: nanoid(),
   },
   {
@@ -24,6 +26,7 @@ const [project, setProject] = useState([
     invision: "Link",
     website: "Link",
     artifacts: "Link",
+    heroImg: {},
     id: nanoid(),
   },
 ]);
