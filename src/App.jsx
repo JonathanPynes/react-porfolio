@@ -5,6 +5,7 @@ import Github from "./Asset/github_1.svg";
 import styled from "styled-components";
 import React, { useState, useEffect, useRef } from "react";
 import BIRDS from "vanta/dist/vanta.birds.min";
+import { nanoid } from "nanoid";
 
 const MyComponent = (props) => {
   const [vantaEffect, setVantaEffect] = useState(0);
@@ -18,10 +19,14 @@ const MyComponent = (props) => {
           touchControls: true,
           gyroControls: false,
           minHeight: 450.0,
-          minWidth: 200.0,
+          minWidth: 300.0,
           scale: 1.0,
+          colorMode: "lerp",
           scaleMobile: 1.0,
           backgroundColor: 0x120820,
+          backgroundAlpha: 1,
+          color1: 0x120820,
+          color2: 0xffe5cf,
         })
       );
     }
@@ -29,8 +34,30 @@ const MyComponent = (props) => {
       if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);
-  return <div ref={myRef}>Foreground content goes here</div>;
+  return (
+    <div ref={myRef}>
+      <AboutMeHeading>What I Bring</AboutMeHeading>
+      <AboutMePara>
+        <p>Problem Solving</p>
+        <p>Work Ethic</p>
+        <p>Vision</p>
+      </AboutMePara>
+    </div>
+  );
 };
+
+const AboutMeHeading = styled.h2`
+  color: rgba(255, 229, 207, 1);
+  margin: 0;
+  font-size: 4em;
+  padding-top: 4rem;
+  text-align: center;
+`;
+const AboutMePara = styled.p`
+  color: rgba(255, 229, 207, 1);
+  text-align: center;
+  font-size: 2em;
+`;
 
 function App() {
   return (
@@ -68,13 +95,24 @@ function App() {
         </HeaderContainerCSS>
       </HeaderBackgroundCSS>
       <MyComponent></MyComponent>
+      <IframeContainer>
+        <Iframe
+          class="video-iframe"
+          src="https://www.youtube.com/embed/x4an-O8e_oU?rel=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></Iframe>
+      </IframeContainer>
     </>
   );
 }
 
-const MyComponentCSS = styled.section`
-  height: 100vh;
-`;
+// const MyComponentCSS = styled.div`
+//   display: flex;
+//   align-items: center;
+// `;
 
 const HeaderBackgroundCSS = styled.section`
   background-image: url(${BackgroundHeader});
@@ -104,6 +142,29 @@ const IconAlignmentCSS = styled.section`
 
 const IconForEachCSS = styled.a`
   margin: 1rem;
+`;
+
+const IframeContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(18, 8, 32, 1);
+`;
+
+//this Iframe is fubar - fix later when doing responsive
+const Iframe = styled.iframe`
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  align-content: center;
+  align-self: center;
+
+  @media (min-width: 768px) {
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
+  }
 `;
 
 export default App;
