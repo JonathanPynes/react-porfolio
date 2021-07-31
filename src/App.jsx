@@ -8,6 +8,8 @@ import BIRDS from "vanta/dist/vanta.birds.min";
 import { nanoid } from "nanoid";
 import Projects from "./Projects.jsx";
 import ProjectItem from "./Projects.jsx";
+import RightButton from "./Asset/right_button.png";
+import LeftButton from "./Asset/left_button.png";
 
 export default function App() {
   const MyComponent = (props) => {
@@ -71,7 +73,7 @@ export default function App() {
       github: "Link",
       website: "Link",
       artifacts: "Link",
-      heroImg: {},
+      heroImg: BackgroundHeader,
       id: nanoid(),
     },
     {
@@ -82,7 +84,7 @@ export default function App() {
       github: "Link",
       website: "Link",
       artifacts: "Link",
-      heroImg: {},
+      heroImg: BackgroundHeader,
       id: nanoid(),
     },
     {
@@ -90,10 +92,10 @@ export default function App() {
       description: "finish the portfolio",
       figma: "Link",
       invision: "Link",
-      github: "Link",
+      github: Github,
       website: "Link",
       artifacts: "Link",
-      heroImg: {},
+      heroImg: BackgroundHeader,
       id: nanoid(),
     },
   ];
@@ -133,12 +135,18 @@ export default function App() {
         </HeaderContainerCSS>
       </HeaderBackgroundCSS>
       <MyComponent></MyComponent>
-      <div>
-        {ProjectData.map((item) => (
-          <ProjectItem item={item} key={item.id} />
-        ))}
-        ;
-      </div>
+      <>
+        <>
+          <div>
+            <img src={LeftButton} alt="" />
+            {ProjectData.map((item) => (
+              <ProjectItem item={item} key={item.id} heroImg={item.heroImg} />
+            ))}
+            ;
+            <img src={RightButton} alt="" />
+          </div>
+        </>
+      </>
       <IframeContainer>
         <Iframe
           class="video-iframe"
