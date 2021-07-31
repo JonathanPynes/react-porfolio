@@ -6,60 +6,98 @@ import styled from "styled-components";
 import React, { useState, useEffect, useRef } from "react";
 import BIRDS from "vanta/dist/vanta.birds.min";
 import { nanoid } from "nanoid";
+import Projects from "./Projects.jsx";
+import ProjectItem from "./Projects.jsx";
 
-const MyComponent = (props) => {
-  const [vantaEffect, setVantaEffect] = useState(0);
-  const myRef = useRef(null);
-  useEffect(() => {
-    if (!vantaEffect) {
-      setVantaEffect(
-        BIRDS({
-          el: myRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 450.0,
-          minWidth: 300.0,
-          scale: 1.0,
-          colorMode: "lerp",
-          scaleMobile: 1.0,
-          backgroundColor: 0x120820,
-          backgroundAlpha: 1,
-          color1: 0x120820,
-          color2: 0xffe5cf,
-        })
-      );
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
-  return (
-    <div ref={myRef}>
-      <AboutMeHeading>What I Bring</AboutMeHeading>
-      <AboutMePara>
-        <p>Problem Solving</p>
-        <p>Work Ethic</p>
-        <p>Vision</p>
-      </AboutMePara>
-    </div>
-  );
-};
+export default function App() {
+  const MyComponent = (props) => {
+    const [vantaEffect, setVantaEffect] = useState(0);
+    const myRef = useRef(null);
+    useEffect(() => {
+      if (!vantaEffect) {
+        setVantaEffect(
+          BIRDS({
+            el: myRef.current,
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 450.0,
+            minWidth: 300.0,
+            scale: 1.0,
+            colorMode: "lerp",
+            scaleMobile: 1.0,
+            backgroundColor: 0x120820,
+            backgroundAlpha: 1,
+            color1: 0x120820,
+            color2: 0xffe5cf,
+          })
+        );
+      }
+      return () => {
+        if (vantaEffect) vantaEffect.destroy();
+      };
+    }, [vantaEffect]);
+    return (
+      <div ref={myRef}>
+        <AboutMeHeading>What I Bring</AboutMeHeading>
+        <AboutMePara>
+          <p>Problem Solving</p>
+          <p>Work Ethic</p>
+          <p>Vision</p>
+        </AboutMePara>
+      </div>
+    );
+  };
 
-const AboutMeHeading = styled.h2`
-  color: rgba(255, 229, 207, 1);
-  margin: 0;
-  font-size: 4em;
-  padding-top: 4rem;
-  text-align: center;
-`;
-const AboutMePara = styled.p`
-  color: rgba(255, 229, 207, 1);
-  text-align: center;
-  font-size: 2em;
-`;
+  const AboutMeHeading = styled.h2`
+    color: rgba(255, 229, 207, 1);
+    margin: 0;
+    font-size: 4em;
+    padding-top: 4rem;
+    text-align: center;
+  `;
+  const AboutMePara = styled.p`
+    color: rgba(255, 229, 207, 1);
+    text-align: center;
+    font-size: 2em;
+  `;
 
-function App() {
+  const ProjectData = [
+    {
+      title: "Finish portfolio",
+      description: "finish the portfolio",
+      figma: "Link",
+      invision: "Link",
+      github: "Link",
+      website: "Link",
+      artifacts: "Link",
+      heroImg: {},
+      id: nanoid(),
+    },
+    {
+      title: "Finish portfolio",
+      description: "finish the portfolio",
+      figma: "Link",
+      invision: "Link",
+      github: "Link",
+      website: "Link",
+      artifacts: "Link",
+      heroImg: {},
+      id: nanoid(),
+    },
+    {
+      title: "Finish portfolio",
+      description: "finish the portfolio",
+      figma: "Link",
+      invision: "Link",
+      github: "Link",
+      website: "Link",
+      artifacts: "Link",
+      heroImg: {},
+      id: nanoid(),
+    },
+  ];
+
   return (
     <>
       <HeaderBackgroundCSS>
@@ -95,6 +133,12 @@ function App() {
         </HeaderContainerCSS>
       </HeaderBackgroundCSS>
       <MyComponent></MyComponent>
+      <div>
+        {ProjectData.map((item) => (
+          <ProjectItem item={item} key={item.id} />
+        ))}
+        ;
+      </div>
       <IframeContainer>
         <Iframe
           class="video-iframe"
@@ -166,5 +210,3 @@ const Iframe = styled.iframe`
     object-fit: contain;
   }
 `;
-
-export default App;

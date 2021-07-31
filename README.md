@@ -1,3 +1,7 @@
+Design Board: https://www.figma.com/file/IbgoDucK7rQhEDFy8JeXmg/Portfolio-Website?node-id=0%3A1
+
+Engineer Design Board: https://whimsical.com/portfolio-carosel-219yQ9yvkGZV4j5uq2ssXh@2Ux7TurymMvpCHKpyEvr
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
