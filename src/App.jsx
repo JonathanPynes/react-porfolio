@@ -21,8 +21,8 @@ export default function App() {
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
-            minHeight: 600.0,
-            minWidth: 300.0,
+            minHeight: 300,
+            minWidth: 300,
             scale: 1.0,
             colorMode: "lerp",
             scaleMobile: 1.0,
@@ -43,7 +43,7 @@ export default function App() {
         <AboutMePara>
           <p>Problem Solving</p>
           <p>Work Ethic</p>
-          <p>Vision</p>
+          <ZeroMargin>Vision</ZeroMargin>
         </AboutMePara>
       </div>
     );
@@ -53,13 +53,17 @@ export default function App() {
     color: rgba(255, 229, 207, 1);
     margin: 0;
     font-size: 4em;
-    padding-top: 4rem;
+    padding: 2rem;
     text-align: center;
   `;
   const AboutMePara = styled.p`
     color: rgba(255, 229, 207, 1);
     text-align: center;
     font-size: 2em;
+    margin-bottom: 0;
+  `;
+  const ZeroMargin = styled.p`
+    margin-bottom: 0;
   `;
 
   const ProjectData = [
@@ -132,7 +136,9 @@ export default function App() {
           </section>
         </HeaderContainerCSS>
       </HeaderBackgroundCSS>
-      <MyComponent></MyComponent>
+      <MyComponentCSS>
+        <MyComponent></MyComponent>
+      </MyComponentCSS>
       <ProjectItem projects={ProjectData} />
       <IframeContainer>
         <Iframe
@@ -148,10 +154,11 @@ export default function App() {
   );
 }
 
-// const MyComponentCSS = styled.div`
-//   display: flex;
-//   align-items: center;
-// `;
+const MyComponentCSS = styled.div`
+  width: 100%;
+  height: auto;
+  background-color: rgba(18, 8, 32, 1);
+`;
 
 const HeaderBackgroundCSS = styled.section`
   background-image: url(${BackgroundHeader});
