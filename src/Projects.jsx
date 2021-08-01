@@ -24,16 +24,22 @@ const ProjectItem = ({ projects }) => {
           <div key={index}>
             {index === current && (
               <Test>
-                <LeftButtonCSS src={LeftButton} alt="" onClick={prevProject} />
                 <ProjectSectionInnerCSS>
-                  {projects.title}
-                  {projects.description}
+                  <LeftButtonCSS
+                    src={LeftButton}
+                    alt=""
+                    onClick={prevProject}
+                  />
+                  <div>
+                    {projects.title}
+                    {projects.description}
+                  </div>
+                  <RightButtonCSS
+                    src={RightButton}
+                    alt=""
+                    onClick={nextProject}
+                  />
                 </ProjectSectionInnerCSS>
-                <RightButtonCSS
-                  src={RightButton}
-                  alt=""
-                  onClick={nextProject}
-                />
               </Test>
             )}
           </div>
@@ -51,7 +57,7 @@ flex-direction: row;
 const ProjectSectionInnerCSS = styled.div`
   display: grid;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   justify-content: center;
 `;
 
