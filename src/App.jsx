@@ -8,8 +8,6 @@ import BIRDS from "vanta/dist/vanta.birds.min";
 import { nanoid } from "nanoid";
 import Projects from "./Projects.jsx";
 import ProjectItem from "./Projects.jsx";
-import RightButton from "./Asset/right_button.png";
-import LeftButton from "./Asset/left_button.png";
 
 export default function App() {
   const MyComponent = (props) => {
@@ -23,7 +21,7 @@ export default function App() {
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
-            minHeight: 450.0,
+            minHeight: 600.0,
             minWidth: 300.0,
             scale: 1.0,
             colorMode: "lerp",
@@ -66,7 +64,7 @@ export default function App() {
 
   const ProjectData = [
     {
-      title: "Finish portfolio",
+      title: "I am number 1",
       description: "finish the portfolio",
       figma: "Link",
       invision: "Link",
@@ -74,10 +72,10 @@ export default function App() {
       website: "Link",
       artifacts: "Link",
       heroImg: BackgroundHeader,
-      id: nanoid(),
+      id: "one",
     },
     {
-      title: "Finish portfolio",
+      title: "I am number 2",
       description: "finish the portfolio",
       figma: "Link",
       invision: "Link",
@@ -85,18 +83,18 @@ export default function App() {
       website: "Link",
       artifacts: "Link",
       heroImg: BackgroundHeader,
-      id: nanoid(),
+      id: "two",
     },
     {
-      title: "Finish portfolio",
+      title: "I am index 3",
       description: "finish the portfolio",
       figma: "Link",
       invision: "Link",
-      github: Github,
+      github: "https://jonpynes.com/",
       website: "Link",
       artifacts: "Link",
       heroImg: BackgroundHeader,
-      id: nanoid(),
+      id: "three",
     },
   ];
 
@@ -135,18 +133,7 @@ export default function App() {
         </HeaderContainerCSS>
       </HeaderBackgroundCSS>
       <MyComponent></MyComponent>
-      <>
-        <>
-          <div>
-            <img src={LeftButton} alt="" />
-            {ProjectData.map((item) => (
-              <ProjectItem item={item} key={item.id} heroImg={item.heroImg} />
-            ))}
-            ;
-            <img src={RightButton} alt="" />
-          </div>
-        </>
-      </>
+      <ProjectItem projects={ProjectData} />
       <IframeContainer>
         <Iframe
           class="video-iframe"
