@@ -18,6 +18,8 @@ export default function Header() {
     },
   ]
 
+
+
   return (
     <>
     <HeaderCSS>
@@ -38,7 +40,7 @@ export default function Header() {
   );
 }
 
-const HeaderCSS = styled.section`
+const HeaderCSS = styled.nav`
 display: flex;
 justify-content: space-between;
 position: sticky;
@@ -58,9 +60,11 @@ const IconAlignmentCSS = styled.div`
   
  
   a {
+  transition: background-color 690ms;
   margin: 1rem;
   width: 50px;
   height: 50px;
+  border-radius: 50%;
   &:hover {
     background-color: rgba(120, 45, 200, 1);
     border-radius: 50%;
