@@ -9,7 +9,7 @@ const {price, percentChange24hr, bitcoin} = useFetchBitcoin(url)
 
   return (
     <>
-    <h3>$ Dollar Price: ₿{(1/price).toFixed(6)}</h3>
+    <h3>$ Dollar Price: ₿{(1/price)?.toFixed(6)}</h3>
     <h4>24hr Change: {percentChange24hr?.toFixed(2)}%</h4>
     </>
   );
