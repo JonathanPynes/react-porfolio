@@ -18,8 +18,6 @@ export default function Header() {
     },
   ]
 
-
-
   return (
     <>
     <HeaderCSS>
