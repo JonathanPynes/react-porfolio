@@ -47,6 +47,7 @@
 // })();
 
 import { useState, useEffect, useCallback } from "react";
+import { useInterval } from "./useInterval";
 // I am a fan of keeping this away from the comp that could be in other places
 
 const options = {
@@ -59,29 +60,19 @@ const options = {
 
 const useFetchBitcoin = (url) => {
   const [bitcoin, setBitcoin] = useState("");
-  const [revalidate, setRevalidate] = useState("");
   const [error, setError] = useState(null);
-
 
   const getDataAPI = useCallback(async () => {
     fetch(url, options)
-      .then((response) => response.json())
-      .then((response) => setBitcoin(response))
-      .catch((err) => setError(err));
-  }, [url]);
+    .then((response) => response.json())
+    .then((response) => setBitcoin(response))
+    .catch((err) => setError(err));
+  },[url]) 
+  useEffect(()=>{
+    getDataAPI()
+  },[getDataAPI])
 
-  useEffect(() => {
-    getDataAPI();
-  }, [getDataAPI, revalidate]);
-
-  useEffect(() => {
-    const revalidateData = setInterval(() => {
-      // we need to randomize a key so we can know time has started
-      setRevalidate((Math.random() + 1).toString(36).substring(7));
-    }, 1728000);
-    // This is pretty important when using setInterval with react
-    return () => clearInterval(revalidateData);
-  }, []);
+  useInterval(getDataAPI, 1728000)
 
 
   return {

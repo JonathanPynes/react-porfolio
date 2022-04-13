@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import useFetchBitcoin from "./useFetchBitcoin";
 import styled from "styled-components/macro";
+import { useInterval } from "./useInterval";
 
 export default function SideBarContent() {
-
-const {price, percentChange24hr, bitcoin} = useFetchBitcoin('https://cryptocurrency-markets.p.rapidapi.com/coin/quote?key=bitcoin')
-console.log({price, percentChange24hr, bitcoin})
+const [url, setUrl]= useState('https://cryptocurrency-markets.p.rapidapi.com/coin/quote?key=bitcoin')
+const {price, percentChange24hr, bitcoin} = useFetchBitcoin(url)
 
   return (
     <>
