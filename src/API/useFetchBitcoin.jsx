@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useInterval } from "./useInterval";
+import { useInterval } from "../UsefulUtils/useInterval";
 // I am a fan of keeping this away from the comp that could be in other places
 
 const options = {

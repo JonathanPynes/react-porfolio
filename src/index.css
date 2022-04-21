@@ -6,6 +6,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(
+    rgba(0, 0, 75, 0.85), 
+    rgba(50, 15, 150, 0.85),
+    rgba(100, 30, 175, 0.85),
+    rgba(150, 45, 200, 0.85),
+    rgba(100, 30, 175, 0.85),
+    rgba(50, 15, 150, 0.85),
+    rgba(0, 0, 75, 0.85)
+  );
+  background-repeat: repeat;
 }
 
 code {
