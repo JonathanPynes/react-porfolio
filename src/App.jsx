@@ -37,12 +37,13 @@ grid-template-areas:
     "sidebar content content content"
     "sidebar content content content"
     "footer footer footer footer";
-text-align: center;
+text-align: flex-start;
 grid-gap: 0.25rem;
 
 @media (max-width: 768px) {
   grid-template-rows: "";
   grid-template-columns: 1fr;
+  overflow-x: none;
   grid-template-areas:
     "nav"
     "main"
@@ -61,21 +62,21 @@ const NavBar = styled.nav`
   border-style: solid;
   border-color: black;
   grid-area: nav;
-  padding: 0.25rem;
+  padding: 0.35rem;
 `;
 const Main = styled.main`
 background: transparent;
 border-style: solid;
   border-color: black;
   grid-area: main;
-  padding: 0.25rem;
+  padding: 0.35rem;
 `;
 const SideBar = styled.div`
 background: transparent;
 border-style: solid;
   border-color: black;
   grid-area: sidebar;
-  padding: 0.25rem;
+  padding: 0.35rem;
 
   @media (max-width: 768px) {
     height: 100vh;
