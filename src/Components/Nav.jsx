@@ -45,7 +45,7 @@ position: sticky;
 align-items: center;
 
  h1 {
-   margin: 0 3rem 0 3rem;
+   margin: .5rem;
    color: rgb(255,229,207);
    font-size: 3rem;
  }
@@ -53,13 +53,13 @@ align-items: center;
 const IconAlignmentCSS = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 3rem;
+  margin: 1rem;
   align-items: flex-end;
   
  
   a {
   transition: background-color 690ms;
-  margin: 1rem;
+  margin: .5rem;
   width: 50px;
   height: 50px;
   border-radius: 50%;
