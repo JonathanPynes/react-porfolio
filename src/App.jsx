@@ -43,7 +43,7 @@ grid-gap: 0.25rem;
 @media (max-width: 768px) {
   grid-template-rows: "";
   grid-template-columns: 1fr;
-  overflow-x: none;
+  overflow-x: hidden;
   grid-template-areas:
     "nav"
     "main"
