@@ -6,11 +6,10 @@ export default function MainContent() {
 
   return (
     <MainContentCSS>
-    <h2>About:</h2>
+    <h2>Bio:</h2>
     <p>
-I enjoy creative endeavors such as painting, drones, photography, entrepreneurship, and experience engineering.   
-Vienna is my oldest at 3 and my son Dominick is 9 months.
-AI, AR, Blockchain, and Web 3.0 are the most interesting frontiers to develop on.
+I enjoy creative endeavors such as painting, drones, photography, entrepreneurship, and experience design. <br/>
+AI, AR, Blockchain, are the most interesting tech centric frontiers and I am excited to be a part of them.
 </p>
     </MainContentCSS>
   )
