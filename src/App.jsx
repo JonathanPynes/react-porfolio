@@ -1,8 +1,9 @@
-import BackgroundHeader from "./Asset/background-header.jpg";
 import SideBarContent from "./Components/SideBar";
 import Nav from "./Components/Nav";
 import MainContent from "./Components/Main";
 import styled from "styled-components/macro";
+import ContentOne from "./Components/ContentOne";
+import useFetchBitcoin from "./API/useFetchBitcoin";
 import React, { useState, useEffect, useRef } from "react";
 
 
@@ -15,7 +16,7 @@ export default function App() {
  <Main><MainContent /></Main>
  <SideBar><SideBarContent /></SideBar>
  <ContentBox>
-     <Content1>Content1</Content1>
+     <Content1><ContentOne /></Content1>
      <Content2>Content2</Content2>
      <Content3>Content3</Content3>
  </ContentBox>

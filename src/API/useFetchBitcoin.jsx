@@ -4,10 +4,6 @@ import { useInterval } from "../UsefulUtils/useInterval";
 
 const options = {
   method: "GET",
-  headers: {
-    "X-RapidAPI-Host": "cryptocurrency-markets.p.rapidapi.com",
-    "X-RapidAPI-Key": `${process.env.REACT_APP_API_KEY}`
-  }
 };
 
 const useFetchBitcoin = (url) => {
@@ -26,11 +22,13 @@ const useFetchBitcoin = (url) => {
 
   useInterval(getDataAPI, 1728000)
 
+  console.log('bitcoin', bitcoin)
 
   return {
     bitcoin: bitcoin,
-    price: bitcoin?.result?.price,
-    percentChange24hr: bitcoin?.result?.priceChangePercentage24h
+    price: bitcoin?.bitcoin?.usd,
+    percentChange24hr: bitcoin?.bitcoin?.usd_24h_change,
+    marketCap: bitcoin?.bitcoin?.usd_market_cap,
   };
 };
 
