@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components/macro";
+import screen from "../Asset/screen.png"
 
 export default function MainContent() {
 
@@ -11,6 +12,7 @@ export default function MainContent() {
 I enjoy creative endeavors such as painting, drones, photography, entrepreneurship, and experience design. <br/>
 AI, AR, Blockchain, are the most interesting tech centric frontiers and I am excited to be a part of them.
 </p>
+<img src={screen} alt="tits"/>
     </MainContentCSS>
   )
 }

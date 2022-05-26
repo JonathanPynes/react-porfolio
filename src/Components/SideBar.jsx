@@ -11,9 +11,9 @@ const {price, percentChange24hr, description, marketCap} = useFetchBitcoin(url)
   return (
     <SideBarCSS>
     <h2>Bitcoin</h2>
-    <h4>$1 = ₿ {(1/price)?.toFixed(6)}</h4>
+    <h4>$ 1 = ₿ {(1/price)?.toFixed(6)}</h4>
     <h4>24hr Change: {percentChange24hr?.toFixed(2)}%</h4>
-    <h4>MarketCap: ${Number(marketCap)?.toLocaleString()}</h4>
+    <h4>MarketCap: $ {Number(marketCap)?.toLocaleString()}</h4>
     <div dangerouslySetInnerHTML={{ __html: description }} />
     </SideBarCSS>
   );
